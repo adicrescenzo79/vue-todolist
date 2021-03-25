@@ -1,0 +1,116 @@
+body{
+  background-color: #000;
+  color: #1d96c2;
+  font-size: 30px;
+  font-family: 'Titillium Web', sans-serif;
+  text-transform: capitalize;
+}
+
+.content{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titolo{
+  width: 600px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+ul{
+  list-style: none;
+  border: 2px solid #fff;
+  padding: 25px;
+  width: 600px;
+  border-radius: 10px;
+  background-color: #db9aba;
+  color: #fff;
+}
+
+ul li{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+ul li .icons{
+  width: 20%;
+}
+
+ul.todos:empty{
+  display: none;
+}
+
+h1.move{
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.aggiunta{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  width: 300px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+  background-image: linear-gradient(#1d96c2, #4ab3d9);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+input{
+  outline: none;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  line-height: 40px;
+  font-size: 25px;
+  width: 85%;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+
+.aggiunta.inactive{
+  display: none;
+}
+
+.content.inactive{
+  display: none;
+}
+
+i.add{
+  font-size: 45px;
+}
+
+i{
+  cursor: pointer;
+}
+
+.icons{
+  display: flex;
+  justify-content: space-between;
+}
