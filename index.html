@@ -17,23 +17,38 @@
 
         <div class="content next-todo">
           <div class="titolo">
-            <h1>Prossime attività:</h1>
+            <h1>Prossime attività</h1>
           </div>
           <ul class="todos" >
-            <li v-for='todo in todos'>
+            <li v-for='todo in todosOrdered'>
               <span
                 class='title'
                 :class="(todo.status == 'done') ? 'barrato' : ''">
                 {{todo.title}}
               </span>
               <div class="controls">
-                <span v-if="todo.status != 'done'" class="edit"><i class="far fa-edit"></i> </span>
-                <span v-if="todo.status != 'done'" class="edit"><i class="fas fa-check"></i> </span>
-                <span v-if="todo.status = 'done'" class="edit"><i class="fas fa-trash"></i> </span>
+                <span
+                  v-if="todo.status != 'done'"
+                  class="edit"
+                  @click='modifica(todo)'>
+                  <i class="far fa-edit"></i>
+                </span>
+                <span
+                  v-if="todo.status != 'done'"
+                  class="edit"
+                  @click='fatto(todo)'>
+                  <i class="fas fa-check"></i>
+                </span>
+                <span
+                  v-if="todo.status == 'done'"
+                  class="remove"
+                  @click='remove(todo)'>
+                  <i class="fas fa-trash"></i>
+                </span>
               </div>
             </li>
           </ul>
-          <input @keyup.enter='submit' v-model='input' id="nuovo" type="text" name="" value="">
+          <input @keyup.enter='submit' v-model='input' id="nuovo" type="text" name="" value="" placeholder="Aggiungi un'attività">
 
         </div>
 

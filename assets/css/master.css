@@ -20,7 +20,7 @@ body{
   width: 600px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: baseline;
 }
 
@@ -88,10 +88,10 @@ input{
   color: #fff;
   line-height: 40px;
   font-size: 25px;
-  width: 85%;
+  width: 50%;
   text-align: center;
   font-family: 'Titillium Web', sans-serif;
-
+  margin-top: 20px;
 }
 
 .aggiunta.inactive{
@@ -113,4 +113,8 @@ i{
 .icons{
   display: flex;
   justify-content: space-between;
+}
+
+.barrato{
+  text-decoration: line-through;
 }
