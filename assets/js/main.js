@@ -2,21 +2,20 @@ var app = new Vue({
   el: '#root',
   data: {
     input: '',
+    editing: false,
+    indexEdit: '',
     todos: [
       {
         title: 'già fatto',
         status: 'done',
-        editing: false,
       },
       {
         title: 'ancora da fare',
         status: 'todo',
-        editing: false,
       },
       {
         title: 'ancora da fare tre volte',
         status: 'todo',
-        editing: false,
       },
 
 
@@ -32,14 +31,26 @@ var app = new Vue({
   },
   methods: {
     submit: function(){
-
-      if (this.input != '') {
-        let newTodo = {
-          title: this.input,
-          status: 'todo',
+      if (!editing) {
+        if (this.input != '') {
+          let newTodo = {
+            title: this.input,
+            status: 'todo',
+          }
+          this.todos.push(newTodo);
+          this.input = '';
         }
-        this.todos.push(newTodo);
-        this.input = '';
+      } else {
+        if (this.input != '') {
+
+          this.todos[indexEdit].title = this.input
+          this.input = '';
+          editing = false;
+        } else {
+          editing = false;
+
+        }
+
       }
     },
 
@@ -48,10 +59,9 @@ var app = new Vue({
       this.todos[index].status = 'done';
     },
     modifica: function(todo){
-      let index = this.todos.indexOf(todo);
+      indexEdit = this.todos.indexOf(todo);
       this.input = todo.title;
-      this.todos.splice(index, 1);
-
+      editing = true;
     },
     remove: function(todo){
       let index = this.todos.indexOf(todo);
