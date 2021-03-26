@@ -48,7 +48,7 @@
               </div>
             </li>
           </ul>
-          <input @keyup.enter='submit' v-model='input' id="nuovo" type="text" name="" value="" placeholder="Aggiungi un'attività">
+          <input ref='inputFocus' @keyup.enter='submit' v-model='input' id="nuovo" type="text" name="" value="" placeholder="Aggiungi un'attività">
 
         </div>
 

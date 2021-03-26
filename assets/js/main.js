@@ -1,8 +1,11 @@
 var app = new Vue({
   el: '#root',
   data: {
+    // variabile per inserire/modificare todo
     input: '',
+    // variabile di controllo x verificare s estiamo modificando o aggiungendo
     editing: false,
+    // variabile in cui salvare l'index del todo che stiamo modificando
     indexEdit: '',
     todos: [
       {
@@ -61,6 +64,7 @@ var app = new Vue({
       indexEdit = this.todos.indexOf(todo);
       this.input = todo.title;
       this.editing = true;
+      this.$refs.inputFocus.focus();
     },
     remove: function(todo){
       let index = this.todos.indexOf(todo);
