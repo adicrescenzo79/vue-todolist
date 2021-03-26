@@ -31,7 +31,7 @@ var app = new Vue({
   },
   methods: {
     submit: function(){
-      if (!editing) {
+      if (!this.editing) {
         if (this.input != '') {
           let newTodo = {
             title: this.input,
@@ -45,10 +45,9 @@ var app = new Vue({
 
           this.todos[indexEdit].title = this.input
           this.input = '';
-          editing = false;
+          this.editing = false;
         } else {
-          editing = false;
-
+          this.editing = false;
         }
 
       }
@@ -61,7 +60,7 @@ var app = new Vue({
     modifica: function(todo){
       indexEdit = this.todos.indexOf(todo);
       this.input = todo.title;
-      editing = true;
+      this.editing = true;
     },
     remove: function(todo){
       let index = this.todos.indexOf(todo);
